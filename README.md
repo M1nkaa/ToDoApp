@@ -1,37 +1,37 @@
 # 📝 Todo App
 
-Простое приложение для управления задачами на Android.
+A simple Android app for managing your daily tasks.
 
-## 📸 Скриншоты
+## 📸 Screenshots
 
-| Список задач | Добавление задачи |
-|---|---|
-| _скриншот сюда_ | _скриншот сюда_ |
+| Task List | Add Task |
+|-----------|----------|
+| <img width="322" height="678" alt="image" src="https://github.com/user-attachments/assets/876361d5-eea4-45cb-9d4f-14eb875f91c8" /> | <img width="322" height="678" alt="image" src="https://github.com/user-attachments/assets/b68940cb-7811-4e08-b0e2-9156cc8e1ef7" /> |
 
-## 🚀 Функциональность
+## ✨ Features
 
-- Просмотр списка задач
-- Добавление новой задачи через кнопку **+**
-- Отметка задачи как выполненной через чекбокс
-- Навигация между экранами через Navigation Component
+- View list of tasks
+- Add a new task via the **+** button
+- Mark tasks as done with a checkbox
+- Navigate between screens using Navigation Component
 
-## 🛠 Стек технологий
+## 🛠 Tech Stack
 
 - **Kotlin**
 - **Android Jetpack Navigation Component**
 - **RecyclerView**
 - **Fragment + Activity**
 
-## 📁 Структура проекта
+## 📁 Project Structure
 
 ```
 app/src/main/
 ├── java/com/m1nkaa/todoapp/
-│   ├── MainActivity.kt        # Точка входа
-│   ├── TaskListFragment.kt    # Экран со списком задач
-│   ├── AddTaskFragment.kt     # Экран добавления задачи
-│   ├── TaskAdapter.kt         # Адаптер для RecyclerView
-│   └── Task.kt                # Модель данных
+│   ├── MainActivity.kt        # Entry point
+│   ├── TaskListFragment.kt    # Task list screen
+│   ├── AddTaskFragment.kt     # Add task screen
+│   ├── TaskAdapter.kt         # RecyclerView adapter
+│   └── Task.kt                # Data model
 └── res/
     ├── layout/
     │   ├── activity_main.xml
@@ -42,20 +42,20 @@ app/src/main/
         └── nav_graph.xml
 ```
 
-## ▶️ Запуск
+## ▶️ Getting Started
 
-1. Клонируй репозиторий
+1. Clone the repository
 ```bash
 git clone https://github.com/m1nkaa/TodoApp.git
 ```
-2. Открой в **Android Studio**
-3. Запусти на эмуляторе или реальном устройстве (API 24+)
+2. Open in **Android Studio**
+3. Run on an emulator or real device (API 24+)
 
-## 📚 Чему научилась
+## 📚 What I Learned
 
-- Работа с `Fragment` и `Activity`
-- Жизненный цикл Android (`Lifecycle`)
-- Навигация через `Navigation Component`
-- Передача данных между фрагментами через `FragmentResult`
-- `RecyclerView` с кастомным адаптером и `ViewHolder`
-- Git flow: ветки, коммиты, Pull Requests
+- Working with `Fragment` and `Activity`
+- Android `Lifecycle` management
+- Screen navigation with `Navigation Component`
+- Passing data between fragments via `FragmentResult`
+- `RecyclerView` with a custom adapter and `ViewHolder`
+- Git flow: branches, commits, Pull Requests

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +16,7 @@ class TaskListFragment : Fragment() {
 
     private val tasks = mutableListOf<Task>()
     private lateinit var adapter: TaskAdapter
+    private lateinit var textEmpty: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +28,11 @@ class TaskListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = TaskAdapter(tasks)
+        textEmpty = view.findViewById(R.id.textEmpty)
+
+        adapter = TaskAdapter(tasks) {
+            updateEmptyState()
+        }
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -37,11 +43,17 @@ class TaskListFragment : Fragment() {
             findNavController().navigate(R.id.action_taskList_to_addTask)
         }
 
-        // Слушаем результат от AddTaskFragment
         parentFragmentManager.setFragmentResultListener("task_result", viewLifecycleOwner) { _, bundle ->
             val title = bundle.getString("task_title") ?: return@setFragmentResultListener
             val newTask = Task(id = tasks.size + 1, title = title)
             adapter.addTask(newTask)
+            updateEmptyState()
         }
+
+        updateEmptyState()
+    }
+
+    private fun updateEmptyState() {
+        textEmpty.visibility = if (tasks.isEmpty()) View.VISIBLE else View.GONE
     }
 }

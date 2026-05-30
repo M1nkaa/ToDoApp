@@ -5,6 +5,10 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+
     <EditText
         android:id="@+id/editTaskTitle"
         android:layout_width="match_parent"
@@ -18,5 +22,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Сохранить" />
+
+    <Button
+        android:id="@+id/buttonCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Отмена"
+        android:backgroundTint="#AAAAAA" />
 
 </LinearLayout>

@@ -22,9 +22,10 @@ class AddTaskFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val editText = view.findViewById<EditText>(R.id.editTaskTitle)
-        val button = view.findViewById<Button>(R.id.buttonSave)
+        val buttonSave = view.findViewById<Button>(R.id.buttonSave)
+        val buttonCancel = view.findViewById<Button>(R.id.buttonCancel)
 
-        button.setOnClickListener {
+        buttonSave.setOnClickListener {
             val title = editText.text.toString().trim()
             if (title.isNotEmpty()) {
                 val result = Bundle().apply {
@@ -35,6 +36,10 @@ class AddTaskFragment : Fragment() {
             } else {
                 editText.error = "Введи название задачи"
             }
+        }
+
+        buttonCancel.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 }

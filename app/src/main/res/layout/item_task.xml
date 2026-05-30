@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center_vertical">
 
     <CheckBox
         android:id="@+id/checkboxDone"
@@ -17,5 +18,13 @@
         android:layout_weight="1"
         android:textSize="16sp"
         android:paddingStart="8dp" />
+
+    <ImageButton
+        android:id="@+id/buttonDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_delete"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Удалить" />
 
 </LinearLayout>
